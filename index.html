@@ -1,47 +1,61 @@
 <html>
   <head>
     <title> Drone Freestyle Challenge </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div id="header"><img src="assets/banner.jpg" width="100%" /></div>
+    <!--<img src="assets/banner.jpg" width="100%" />-->
 
-    <div id="login">
+    <!--<div id="header" class="">-->
+      <div class="jumbotron">
+        <img src="assets/banner.jpg" width="100%" />
+        <h1> Drone Freestyle Challenge </h1>
+        <p> Lorem ipsum </p>
+      </div>
+    <!--</div>-->
+
+    <div class="container-fluid">
+    <div id="login" class="well">
       <form>
+        <div class="form-group">
         <label for="identifier">Kod:</label>
-        <input type="text" id="identifier" name="identifier">
-        <div class="button">
-          <button type="submit">SIGN IN</button>
+        <input type="text" id="identifier" name="identifier" class="form-control">
+        <button type="submit" class="btn">SIGN IN</button>
         </div>
       </form>
     </div>
 
-    <div id="form">
+    <div id="form" class="well">
       <form>
+        <div class="form-group">
         <label for="contestant">Contestant:</label>
-        <select name="contestant">
+        <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
+        <select name="contestant" class="form-control">
           <option value="emil">Emil</option>
           <option value="niklas">Niklas</option>
           <option value="johannes">Johannes</option>
         </select>
+        </div>
 
-        <br />
-
+        <div class="form-group">
         <label for="flow">Flow:</label>
         <input id="flow" type="range" value="5" min="1" max="10" step="1" 
           oninput="flowo.value = flow.value"/>
         <output id="flowo">5</output>
+        </div>
 
-        <br />
-
+        <div class="form-group">
         <label for="tech">Technique:</label>
         <input id="tech" type="range" min="1" max="10" step="1" />
+        </div>
 
-        <br />
-
+        <div class="form-group">
         <label for="risk">Risk:</label>
         <input id="risk" type="range" min="1" max="10" step="1" />
-
-        <br />
+        </div>
 
         <!--
         <label for="innovation">Innovation:</label>
@@ -60,21 +74,26 @@
         <br />
         -->
 
+        <div class="form-group">
         <div class="button">
-          <button type="submit">VOTE</button>
+          <button type="submit" class="btn">VOTE</button>
+        </div>
         </div>
       </form>
     </div>
 
-    <div id="voted">
+    <div id="voted" class="well">
+
       Thank you for your vote! <br />
-      <button id="again"> VOTE AGAIN </button>
+      <button id="again" class="btn"> VOTE AGAIN </button>
     </div>
 
-    <div id="signout">
-      <button id="signout"> SIGN OUT </button>
+    <div id="signout" class="well">
+
+      <button id="signout" class="btn"> SIGN OUT </button>
     </div>
 
-    <div id="footer">Designed by Talkative in Malmö</div>
+    <div id="footer" class="">Designed by Talkative in Malmö</div>
+    </div>
   </body>
 </html>
