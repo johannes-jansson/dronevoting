@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title> Drone Freestyle Challenge </title>
+  </head>
+  <body>
+    <div id="header"><img src="assets/banner.jpg" width="100%" /></div>
+
+    <div id="login">
+      <form>
+        <label for="identifier">Kod:</label>
+        <input type="text" id="identifier" name="identifier">
+        <div class="button">
+          <button type="submit">SIGN IN</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="form">
+      <form>
+        <label for="contestant">Contestant:</label>
+        <select name="contestant">
+          <option value="emil">Emil</option>
+          <option value="niklas">Niklas</option>
+          <option value="johannes">Johannes</option>
+        </select>
+
+        <br />
+
+        <label for="flow">Flow:</label>
+        <input id="flow" type="range" value="5" min="1" max="10" step="1" 
+          oninput="flowo.value = flow.value"/>
+        <output id="flowo">5</output>
+
+        <br />
+
+        <label for="tech">Technique:</label>
+        <input id="tech" type="range" min="1" max="10" step="1" />
+
+        <br />
+
+        <label for="risk">Risk:</label>
+        <input id="risk" type="range" min="1" max="10" step="1" />
+
+        <br />
+
+        <!--
+        <label for="innovation">Innovation:</label>
+        <input id="innovation" type="range" min="1" max="10" step="1" />
+
+        <br />
+
+        <label for="variation">Variation:</label>
+        <input id="variation" type="range" min="1" max="10" step="1" />
+
+        <br />
+
+        <label for="intensity">Intensity:</label>
+        <input id="intensity" type="range" min="1" max="10" step="1" />
+
+        <br />
+        -->
+
+        <div class="button">
+          <button type="submit">VOTE</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="voted">
+      Thank you for your vote! <br />
+      <button id="again"> VOTE AGAIN </button>
+    </div>
+
+    <div id="signout">
+      <button id="signout"> SIGN OUT </button>
+    </div>
+
+    <div id="footer">Designed by Talkative in Malmö</div>
+  </body>
+</html>
