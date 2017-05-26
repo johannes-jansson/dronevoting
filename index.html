@@ -5,25 +5,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!--<img src="assets/banner.jpg" width="100%" />-->
+    <img src="assets/banner.jpg" width="100%" />
 
     <!--<div id="header" class="">-->
       <div class="jumbotron">
-        <img src="assets/banner.jpg" width="100%" />
+        <!--<img src="assets/banner.jpg" width="100%" />-->
+        <div class="container-fluid">
         <h1> Drone Freestyle Challenge </h1>
-        <p> Lorem ipsum </p>
+        <!-- <p> Lorem ipsum </p> -->
+        </div>
       </div>
     <!--</div>-->
 
     <div class="container-fluid">
+
     <div id="login" class="well">
       <form>
         <div class="form-group">
-        <label for="identifier">Kod:</label>
-        <input type="text" id="identifier" name="identifier" class="form-control">
-        <button type="submit" class="btn">SIGN IN</button>
+          <label for="identifier">Kod:</label>
+          <input type="text" id="identifier" name="identifier" class="form-control">
+          <button type="submit" id="loginbutton" class="btn">SIGN IN</button>
         </div>
       </form>
     </div>
@@ -76,21 +81,20 @@
 
         <div class="form-group">
         <div class="button">
-          <button type="submit" class="btn">VOTE</button>
+          <button type="submit" class="btn btn-block">VOTE</button>
         </div>
         </div>
       </form>
     </div>
 
     <div id="voted" class="well">
-
-      Thank you for your vote! <br />
-      <button id="again" class="btn"> VOTE AGAIN </button>
+      <h2> Thank you for your vote! </h2>
+      <button id="again" class="btn btn-block"> VOTE AGAIN </button>
     </div>
 
     <div id="signout" class="well">
 
-      <button id="signout" class="btn"> SIGN OUT </button>
+      <button id="signout" class="btn btn-block"> SIGN OUT </button>
     </div>
 
     <div id="footer" class="">Designed by Talkative in Malmö</div>
