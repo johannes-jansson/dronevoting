@@ -5,4 +5,5 @@ A voting webapp for a freestyle drone competition
 [ ] Ajax
 [ ] Last navigation stuff
 [ ] Entire backend
-[ ] Move sql credentials
+[x] Move sql credentials
+[ ] Fix sliders on Mobile Safari
