@@ -17,4 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("signout").classList.remove('hide');
     console.log("l");
   }
+
+  document.getElementById("signoutbutton").onclick = function () {
+    document.getElementById("hiddenidentifier").value = "";
+    document.getElementById("form").classList.add('hide');
+    document.getElementById("login").classList.remove('hide');
+    document.getElementById("signout").classList.add('hide');
+    if ( ! document.getElementById("voted").classList.contains('hide') ) {
+      document.getElementById("voted").classList.add('hide');
+    }
+  }
 });

@@ -33,11 +33,11 @@
 
     <div id="form" class="well hide">
       <form method="post" action="post.php">
-        <input type="hidden" name="identifier" id="hiddenidentifier"></input>
+        <input type="hidden" name="hiddenidentifier" id="hiddenidentifier"></input>
         <div class="form-group">
-        <label for="contestant">Contestant:</label>
+        <label for="performance">Performance:</label>
         <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
-        <select name="contestant" class="form-control">
+        <select name="performance" class="form-control">
           <option value="emil">Emil</option>
           <option value="niklas">Niklas</option>
           <option value="johannes">Johannes</option>
@@ -46,19 +46,19 @@
 
         <div class="form-group">
         <label for="flow">Flow:</label>
-        <input id="flow" type="range" value="5" min="1" max="10" step="1" 
+        <input name="flow" id="flow" type="range" value="5" min="1" max="10" step="1" 
           oninput="flowo.value = flow.value"/>
         <output id="flowo">5</output>
         </div>
 
         <div class="form-group">
         <label for="tech">Technique:</label>
-        <input id="tech" type="range" min="1" max="10" step="1" />
+        <input name="tech" id="tech" type="range" min="1" max="10" step="1" />
         </div>
 
         <div class="form-group">
         <label for="risk">Risk:</label>
-        <input id="risk" type="range" min="1" max="10" step="1" />
+        <input name="risk" id="risk" type="range" min="1" max="10" step="1" />
         </div>
 
         <!--
@@ -93,7 +93,7 @@
 
     <div id="signout" class="well hide">
 
-      <button id="signout" class="btn btn-block"> SIGN OUT </button>
+      <button id="signoutbutton" class="btn btn-block"> SIGN OUT </button>
     </div>
 
     <div id="footer" class="">Designed by Talkative in Malmö</div>

@@ -11,8 +11,12 @@ try {
 
 
     $stmt = $conn->prepare( "INSERT INTO Votes (voter, performance, flow, tech, risk)
-		VALUES (:voter, 'emil', 10, 10, 10)");
-    $stmt->bindParam(':voter', $_POST['identifier']);
+		VALUES (:voter, :performance, :flow, :tech, :risk)");
+    $stmt->bindParam(':voter', $_POST['hiddenidentifier']);
+    $stmt->bindParam(':performance', $_POST['hiddenidentifier']);
+    $stmt->bindParam(':flow', $_POST['flow']);
+    $stmt->bindParam(':tech', $_POST['tech']);
+    $stmt->bindParam(':risk', $_POST['risk']);
 
     $stmt->execute();
 
