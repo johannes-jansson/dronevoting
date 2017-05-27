@@ -11,8 +11,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+$info = $_POST['identifier'];
+echo $info;
+
 $sql = "INSERT INTO Votes (voter, performance, flow, tech, risk)
-VALUES ('johannes', 'emil', 10, 10, 10)";
+VALUES ('".$_POST['identifier']."', 'emil', 10, 10, 10)";
+
+//$stmt = mysqli_prepare($sql);
+//$stmt->bind_param("sss", $_POST['identifier']);
+
+
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
