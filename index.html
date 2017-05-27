@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -32,7 +34,8 @@
     </div>
 
     <div id="form" class="well hide">
-      <form method="post" action="post.php">
+      <!--<form method="post" action="post.php">-->
+      <form>
         <input type="hidden" name="hiddenidentifier" id="hiddenidentifier"></input>
         <div class="form-group">
         <label for="performance">Performance:</label>
@@ -80,7 +83,7 @@
 
         <div class="form-group">
         <div class="button">
-          <button type="submit" class="btn btn-block">VOTE</button>
+          <button id="votebutton" class="btn btn-block">VOTE</button>
         </div>
         </div>
       </form>

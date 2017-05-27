@@ -5,4 +5,4 @@ A voting webapp for a freestyle drone competition
 [ ] Ajax
 [ ] Last navigation stuff
 [ ] Entire backend
-
+[ ] Move sql credentials

@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "dronevoting";
+$servername = "fpvwiki.se.mysql";
+$username = "fpvwiki_se_dronevoting";
+$password = "c6h12o6";
+$dbname = "fpvwiki_se_dronevoting";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -13,7 +13,7 @@ try {
     $stmt = $conn->prepare( "INSERT INTO Votes (voter, performance, flow, tech, risk)
 		VALUES (:voter, :performance, :flow, :tech, :risk)");
     $stmt->bindParam(':voter', $_POST['hiddenidentifier']);
-    $stmt->bindParam(':performance', $_POST['hiddenidentifier']);
+    $stmt->bindParam(':performance', $_POST['performance']);
     $stmt->bindParam(':flow', $_POST['flow']);
     $stmt->bindParam(':tech', $_POST['tech']);
     $stmt->bindParam(':risk', $_POST['risk']);
