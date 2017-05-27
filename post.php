@@ -1,11 +1,12 @@
 <?php
-$servername = "fpvwiki.se.mysql";
-$username = "fpvwiki_se_dronevoting";
-$password = "c6h12o6";
-$dbname = "fpvwiki_se_dronevoting";
+// $servername = "fpvwiki.se.mysql";
+// $username = "fpvwiki_se_dronevoting";
+// $password = "c6h12o6";
+// $dbname = "fpvwiki_se_dronevoting";
+    require_once("connect.inc.php");
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$database", $userName, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
