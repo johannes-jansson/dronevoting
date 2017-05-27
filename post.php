@@ -12,7 +12,8 @@ try {
 
 
     $stmt = $conn->prepare( "INSERT INTO Votes (voter, performance, flow, tech, risk)
-		VALUES (:voter, :performance, :flow, :tech, :risk)");
+		VALUES (:voter, :performance, :flow, :tech, :risk)
+		ON DUPLICATE KEY UPDATE flow=:flow, tech=:tech, risk=:risk");
     $stmt->bindParam(':voter', $_POST['hiddenidentifier']);
     $stmt->bindParam(':performance', $_POST['performance']);
     $stmt->bindParam(':flow', $_POST['flow']);
