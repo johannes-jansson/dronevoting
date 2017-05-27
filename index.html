@@ -24,17 +24,16 @@
     <div class="container-fluid">
 
     <div id="login" class="well">
-      <form method="post" action="post.php">
-        <div class="form-group">
-          <label for="identifier">Kod:</label>
-          <input type="text" id="identifier" name="identifier" class="form-control">
-          <button type="submit" id="loginbutton" class="btn">SIGN IN</button>
-        </div>
-      </form>
+      <div class="form-group">
+        <label for="identifier">Kod:</label>
+        <input type="text" id="identifier" name="identifier" class="form-control">
+        <button id="loginbutton" class="btn">SIGN IN</button>
+      </div>
     </div>
 
-    <div id="form" class="well">
-      <form>
+    <div id="form" class="well hide">
+      <form method="post" action="post.php">
+        <input type="hidden" name="identifier" id="hiddenidentifier"></input>
         <div class="form-group">
         <label for="contestant">Contestant:</label>
         <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
@@ -87,12 +86,12 @@
       </form>
     </div>
 
-    <div id="voted" class="well">
+    <div id="voted" class="well hide">
       <h2> Thank you for your vote! </h2>
       <button id="again" class="btn btn-block"> VOTE AGAIN </button>
     </div>
 
-    <div id="signout" class="well">
+    <div id="signout" class="well hide">
 
       <button id="signout" class="btn btn-block"> SIGN OUT </button>
     </div>
