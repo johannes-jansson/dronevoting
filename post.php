@@ -4,29 +4,22 @@ $username = "root";
 $password = "root";
 $dbname = "dronevoting";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$info = $_POST['identifier'];
-echo $info;
-
-$sql = "INSERT INTO Votes (voter, performance, flow, tech, risk)
-VALUES ('".$_POST['identifier']."', 'emil', 10, 10, 10)";
-
-//$stmt = mysqli_prepare($sql);
-//$stmt->bind_param("sss", $_POST['identifier']);
+		$sql = "INSERT INTO Votes (voter, performance, flow, tech, risk)
+		VALUES ('".$_POST['identifier']."', 'emil', 10, 10, 10)";
 
 
 
-if ($conn->query($sql) === TRUE) {
+    // use exec() because no results are returned
+    $conn->exec($sql);
     echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+} catch(PDOException $e) {
+    echo $sql . "<br>" . $e->getMessage();
 }
 
-$conn->close();
+$conn = null;
 ?>
