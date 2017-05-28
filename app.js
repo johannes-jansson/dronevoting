@@ -17,10 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  /*
   document.getElementById("votebutton").onclick = function () {
     document.getElementById("form").classList.add('hide');
     document.getElementById("voted").classList.remove('hide');
   }
+  */
+
   document.getElementById("again").onclick = function () {
     document.getElementById("form").classList.remove('hide');
     document.getElementById("voted").classList.add('hide');
@@ -31,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   /*
   $('#votebutton').click(function(){
+    console.log("ost");
     $.ajax({
       url: post.php,
       type:'POST',
