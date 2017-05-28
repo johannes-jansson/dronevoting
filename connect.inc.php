@@ -1,6 +1,6 @@
 <?php
-  $host = "fpvwiki.se.mysql";
-  $userName = "fpvwiki_se_dronevoting";
-  $password = "c6h12o6";
+  $host = "localhost";
+  $userName = "root";
+  $password = "root";
   $database = "fpvwiki_se_dronevoting";
 ?>

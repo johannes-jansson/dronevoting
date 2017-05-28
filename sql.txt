@@ -1,11 +1,11 @@
 // do average
-select (avg(flow)+avg(tech)+avg(risk))/3 
+select performance, (avg(flow)+avg(tech)+avg(risk))/3 
 from Votes 
 group by performance;
 
 
 // exclude non valid voters
-select (avg(flow)+avg(tech)+avg(risk))/3 
+select performance, (avg(flow)+avg(tech)+avg(risk))/3 as average
 from Votes 
 where Votes.voter in (select name from Voters) 
 group by performance;
