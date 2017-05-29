@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if ( ! document.getElementById("voted").classList.contains('hide') ) {
       document.getElementById("voted").classList.add('hide');
     }
+    document.getElementById("flow").value = 5;
+    document.getElementById("tech").value = 5;
+    document.getElementById("risk").value = 5;
+    document.getElementById("flowo").value = 5;
+    document.getElementById("techo").value = 5;
+    document.getElementById("risko").value = 5;
   }
 
   /*
