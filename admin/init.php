@@ -18,13 +18,32 @@ try {
     $stmt->execute();
     echo "Cleared Voters table";
 
-    $stmt = $conn->prepare( 'INSERT INTO Voters (name) VALUES ("mossa"), 
-      ("verklighet"), ("sammandrag"), ("sterilisering"), ("budgivning"),
-      ("regeringsbildning"), ("halvmil"), ("spjut"), ("miljard"), ("systerfartyg"),
-      ("mossa"), ("systemvetenskap"), ("bakelit"), ("sammankallande"), ("mediaspelare"),
-      ("gavel"), ("krut"), ("hippie"), ("samklang"), ("budgivning"),
-      ("regeringsbildning"), ("alfa"), ("ishall"), ("konstgalleri"), ("oas"), ("gjutning"),
-      ("lantarbetare"), ("sammankallande"), ("mp3"), ("garant")');
+    $stmt = $conn->prepare( 'INSERT INTO Voters (name) VALUES 
+      ("perfume"), ("circle"), ("intention"), ("staff"), ("fruit"), ("tone"),
+      ("image"), ("declaration"), ("fiction"), ("glacier"), ("back"), ("constitution"),
+      ("essay"), ("grandmother"), ("plead"), ("costume"), ("limit"), ("therapist"),
+      ("mosaic"), ("impulse"), ("pastel"), ("spill"), ("replacement"), ("layout"),
+      ("rabbit"), ("passage"), ("story"), ("examination"), ("punish"), ("football"),
+      ("disappointment"), ("magnetic"), ("dip"), ("eyebrow"), ("different"), ("wisecrack"),
+      ("ivory"), ("minute"), ("pudding"), ("spokesperson"), ("pan"), ("claim"),
+      ("pile"), ("rotate"), ("splurge"), ("asylum"), ("inspiration"), ("reasonable"),
+      ("gold"), ("decorative"), ("fashion"), ("species"), ("issue"), ("judgment"),
+      ("allow"), ("norm"), ("predict"), ("medium"), ("calculation"), ("crutch"),
+      ("pawn"), ("opposite"), ("evening"), ("prosecution"), ("slide"), ("ribbon"),
+      ("thanks"), ("hole"), ("leg"), ("scene"), ("announcement"), ("constant"),
+      ("exclusive"), ("dismissal"), ("obligation"), ("torch"), ("reactor"), ("polite"),
+      ("magazine"), ("predator"), ("plant"), ("secretion"), ("link"), ("curl"),
+      ("support"), ("quantity"), ("warn"), ("revoke"), ("understand"), ("flow"),
+      ("sickness"), ("diameter"), ("deputy"), ("map"), ("captivate"), ("harmony"),
+      ("feedback"), ("contemporary"), ("related"), ("retain"), ("hall"), ("health"),
+      ("session"), ("nightmare"), ("unfair"), ("weapon"), ("deep"), ("achievement"),
+      ("electron"), ("district"), ("substitute"), ("dish"), ("shake"), ("quotation"),
+      ("wait"), ("fine"), ("disposition"), ("listen"), ("sentiment"), ("charm"),
+      ("insure"), ("default"), ("certain"), ("feel"), ("labour"), ("helicopter"),
+      ("angel"), ("delete"), ("central"), ("secular"), ("series"), ("injection"),
+      ("painter"), ("accept"), ("eye"), ("bride"), ("weave"), ("rain"),
+      ("prey"), ("drink"), ("dignity"), ("favorable"), ("spell"), ("take"),
+      ("analyst")');
     $stmt->bindParam(':voter', $_POST['hiddenidentifier']);
     $stmt->bindParam(':performance', $_POST['performance']);
     $stmt->bindParam(':flow', $_POST['flow']);
