@@ -9,6 +9,10 @@ h2 {
   display: none;
 }
 
+output {
+  display: inline-block;
+}
+
 input[type="range"]{
   -webkit-appearance: none;
   margin: 0;

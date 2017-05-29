@@ -48,19 +48,21 @@
         </div>
 
         <div class="form-group">
-        <div>Flow: <output id="flowo">5</output></div>
+        <label for="flow">Flow: <output id="flowo">5</output></label>
         <input name="flow" id="flow" type="range" value="5" min="1" max="10" step="1" 
           oninput="flowo.value = flow.value"/>
         </div>
 
         <div class="form-group">
-        <label for="tech">Technique:</label>
-        <input name="tech" id="tech" type="range" min="1" max="10" step="1" />
+        <label for="tech">Technique: <output id="techo">5</output></label>
+        <input name="tech" id="tech" type="range" value="5" min="1" max="10" step="1"
+          oninput="techo.value = tech.value"/>
         </div>
 
         <div class="form-group">
-        <label for="risk">Risk:</label>
-        <input name="risk" id="risk" type="range" min="1" max="10" step="1" />
+        <label for="risk">Risk: <output id="risko">5</output></label>
+        <input name="risk" id="risk" type="range" value="5" min="1" max="10" step="1"
+          oninput="risko.value = risk.value"/>
         </div>
 
         <!--
