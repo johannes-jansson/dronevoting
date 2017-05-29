@@ -29,13 +29,13 @@
       <div class="form-group">
         <label for="identifier">Kod:</label>
         <input type="text" id="identifier" name="identifier" class="form-control">
-        <button id="loginbutton" class="btn">SIGN IN</button>
+        <button type="button" id="loginbutton" class="btn">SIGN IN</button>
       </div>
     </div>
 
     <div id="form" class="well hide">
-      <form method="post" action="post.php">
-      <!--<form>-->
+      <!--<form method="post" action="post.php">-->
+      <form>
         <input type="hidden" name="hiddenidentifier" id="hiddenidentifier"></input>
         <div class="form-group">
         <label for="performance">Performance:</label>
@@ -84,7 +84,7 @@
 
         <div class="form-group">
         <div class="button">
-          <button id="votebutton" class="btn btn-block">VOTE</button>
+          <button type="button" id="votebutton" class="btn btn-block">VOTE</button>
         </div>
         </div>
       </form>
@@ -92,12 +92,12 @@
 
     <div id="voted" class="well hide">
       <h2> Thank you for your vote! </h2>
-      <button id="again" class="btn btn-block"> VOTE AGAIN </button>
+      <button type="button" id="again" class="btn btn-block"> VOTE AGAIN </button>
     </div>
 
     <div id="signout" class="well hide">
 
-      <button id="signoutbutton" class="btn btn-block"> SIGN OUT </button>
+      <button type="button" id="signoutbutton" class="btn btn-block"> SIGN OUT </button>
     </div>
 
     <div id="footer" class="">Designed by Talkative in Malmö</div>

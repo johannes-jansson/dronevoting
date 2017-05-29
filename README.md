@@ -9,7 +9,7 @@ A voting webapp for a freestyle drone competition
 [ ] Move to server
 
 ## Todos "frontend"
-[ ] Fix sliders on Mobile Safari
+[x] Fix sliders on Mobile Safari
 [ ] Last navigation stuff
 [ ] Style admin backend view
 [ ] Style public backend view
