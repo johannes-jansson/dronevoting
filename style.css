@@ -1,7 +1,32 @@
+h1 {
+  font-size: 1.7em;
+}
 h2 {
   text-align: center;
 }
 
 .hide {
   display: none;
+}
+
+input[type="range"]{
+  -webkit-appearance: none;
+  margin: 0;
+  width: 100%;
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+  padding: 2px;
+  height: 33px;
+  background: rgb(216, 216, 216);
+  border-radius: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 29px;
+  height: 29px;
+  background: rgba(255,255,255,1);
+  border-radius: 20px;
 }
