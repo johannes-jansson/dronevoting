@@ -16,10 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("voted").classList.add('hide');
     }
     document.getElementById("flow").value = 5;
-    document.getElementById("tech").value = 5;
+    document.getElementById("variation").value = 5;
+    document.getElementById("combos").value = 5;
+    document.getElementById("crash").value = 0;
     document.getElementById("risk").value = 5;
     document.getElementById("flowo").value = 5;
-    document.getElementById("techo").value = 5;
+    document.getElementById("variationo").value = 5;
+    document.getElementById("comboso").value = 5;
     document.getElementById("risko").value = 5;
   }
 
@@ -27,13 +30,17 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("form").classList.remove('hide');
     document.getElementById("voted").classList.add('hide');
     document.getElementById("flow").value = 5;
-    document.getElementById("tech").value = 5;
+    document.getElementById("variation").value = 5;
+    document.getElementById("combos").value = 5;
+    document.getElementById("crash").value = 0;
     document.getElementById("risk").value = 5;
     document.getElementById("flowo").value = 5;
-    document.getElementById("techo").value = 5;
+    document.getElementById("variationo").value = 5;
+    document.getElementById("comboso").value = 5;
     document.getElementById("risko").value = 5;
   }
 
+  /*
   document.getElementById("votebutton").onclick = function () {
     $.ajax({
       type: 'post',
@@ -44,5 +51,5 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("voted").classList.remove('hide');
       }
     });
-  }
+  }*/
 });

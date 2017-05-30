@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <img src="assets/banner.jpg" width="100%" />
+    <img src="assets/header.jpg" width="100%" />
 
     <!--<div id="header" class="">-->
       <div class="jumbotron">
@@ -34,8 +34,8 @@
     </div>
 
     <div id="form" class="well hide">
-      <!--<form method="post" action="post.php">-->
-      <form>
+      <form method="post" action="post.php">
+      <!--<form>-->
         <input type="hidden" name="hiddenidentifier" id="hiddenidentifier"></input>
         <div class="form-group">
         <label for="performance">Performance:</label>
@@ -73,7 +73,8 @@
 
         <div class="form-group">
         <label for="crash">Krasch: </label>
-        <input name="crash" id="crash" type="checkbox" />
+        <input name="crash" id="crash" type="hidden" value=0 />
+        <input name="crash" id="crash" type="checkbox" value=1 />
         </div>
 
         <!--
@@ -95,7 +96,8 @@
 
         <div class="form-group">
         <div class="button">
-          <button type="button" id="votebutton" class="btn btn-block">VOTE</button>
+          <!--<button type="button" id="votebutton" class="btn btn-block">VOTE</button>-->
+          <button id="votebutton" class="btn btn-block">VOTE</button>
         </div>
         </div>
       </form>
@@ -111,7 +113,9 @@
       <button type="button" id="signoutbutton" class="btn btn-block"> SIGN OUT </button>
     </div>
 
-    <div id="footer" class="">Designed by Talkative in Malmö</div>
-    </div>
+    <!--<div id="footer" class="">Designed by Talkative in Malmö</div>
+    </div>-->
+
+    <img src="assets/footer.jpg" width="100%" />
   </body>
 </html>

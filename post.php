@@ -2,10 +2,6 @@
     require_once("connect.inc.php");
 
 try {
-    print($host);
-    print($database);
-    print($userName);
-    print($password);
     $conn = new PDO("mysql:host=$host;dbname=$database", $userName, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
