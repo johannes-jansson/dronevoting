@@ -8,13 +8,13 @@ try {
 
 
     
-    $stmt = $conn->prepare("select voter, performance, risk, flow, variation, combos, crash, tstamp, (risk + flow + variation, combos)/3-5*crash as average from Votes;");
+    $stmt = $conn->prepare("select voter, performance, risk, flow, variation, combos, crash, tstamp, (risk + flow + variation + combos)/4-5*crash as average from Votes;");
     $stmt->execute();
     $result = $stmt->fetchAll();
 
     //print_r($result);
     echo "<table>";
-    echo "<tr><td>Voter</td><td>Performance</td><td>Risk</td><td>Flow</td><td>Variation</td><td>Combos</td><td>Crash</td><td>Avg</td><td>Time</td></tr>";
+    echo "<tr><td>Voter</td><td>Performance</td><td>Risk</td><td>Flow</td><td>Variation</td><td>Combos</td><td>Crash</td><td>Score</td><td>Time</td></tr>";
     foreach( $result as $row ) {
       echo "<tr>";
       echo "<td>".$row['voter']."</td>";
