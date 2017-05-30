@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("risko").value = 5;
   }
 
-  /*
   document.getElementById("votebutton").onclick = function () {
     $.ajax({
       type: 'post',
@@ -51,5 +50,5 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("voted").classList.remove('hide');
       }
     });
-  }*/
+  }
 });
