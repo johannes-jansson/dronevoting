@@ -6,9 +6,9 @@ try {
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // $stmt = $conn->prepare( "truncate Votes");
-    // $stmt->execute();
-    // echo "Cleared Votes table";
+    $stmt = $conn->prepare( "truncate Votes");
+    $stmt->execute();
+    echo "Cleared Votes table";
 
     $stmt = $conn->prepare( "truncate Performances");
     $stmt->execute();
@@ -44,20 +44,10 @@ try {
       ("painter"), ("accept"), ("eye"), ("bride"), ("weave"), ("rain"),
       ("prey"), ("drink"), ("dignity"), ("favorable"), ("spell"), ("take"),
       ("analyst")');
-    $stmt->bindParam(':voter', $_POST['hiddenidentifier']);
-    $stmt->bindParam(':performance', $_POST['performance']);
-    $stmt->bindParam(':flow', $_POST['flow']);
-    $stmt->bindParam(':tech', $_POST['tech']);
-    $stmt->bindParam(':risk', $_POST['risk']);
     $stmt->execute();
     echo "Voters table updated";
 
     $stmt = $conn->prepare( 'INSERT INTO Performances (name) VALUES ("emil"), ("janzon")');
-    $stmt->bindParam(':voter', $_POST['hiddenidentifier']);
-    $stmt->bindParam(':performance', $_POST['performance']);
-    $stmt->bindParam(':flow', $_POST['flow']);
-    $stmt->bindParam(':tech', $_POST['tech']);
-    $stmt->bindParam(':risk', $_POST['risk']);
     $stmt->execute();
     echo "Voters table updated";
 

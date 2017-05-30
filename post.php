@@ -1,8 +1,4 @@
 <?php
-// $servername = "fpvwiki.se.mysql";
-// $username = "fpvwiki_se_dronevoting";
-// $password = "c6h12o6";
-// $dbname = "fpvwiki_se_dronevoting";
     require_once("connect.inc.php");
 
 try {
@@ -28,8 +24,6 @@ try {
 
     $stmt->execute();
 
-    // use exec() because no results are returned
-    //$conn->exec($sql);
     echo "New record created successfully";
 } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();

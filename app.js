@@ -23,13 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("risko").value = 5;
   }
 
-  /*
-  document.getElementById("votebutton").onclick = function () {
-    document.getElementById("form").classList.add('hide');
-    document.getElementById("voted").classList.remove('hide');
-  }
-  */
-
   document.getElementById("again").onclick = function () {
     document.getElementById("form").classList.remove('hide');
     document.getElementById("voted").classList.add('hide');
