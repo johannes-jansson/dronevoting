@@ -15,14 +15,16 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $stmt = $conn->prepare( "INSERT INTO Votes (voter, performance, flow, tech, risk)
-		VALUES (:voter, :performance, :flow, :tech, :risk)
-		ON DUPLICATE KEY UPDATE flow=:flow, tech=:tech, risk=:risk");
+    $stmt = $conn->prepare( "INSERT INTO Votes (voter, performance, risk, flow, variation, combos, crash)
+		VALUES (:voter, :performance, :risk, :flow, :variation, :combos, :crash)
+		ON DUPLICATE KEY UPDATE risk=:risk, flow=:flow, variation=:variation, combos=:combos, crash=:crash");
     $stmt->bindParam(':voter', $_POST['hiddenidentifier']);
     $stmt->bindParam(':performance', $_POST['performance']);
-    $stmt->bindParam(':flow', $_POST['flow']);
-    $stmt->bindParam(':tech', $_POST['tech']);
     $stmt->bindParam(':risk', $_POST['risk']);
+    $stmt->bindParam(':flow', $_POST['flow']);
+    $stmt->bindParam(':variation', $_POST['variation']);
+    $stmt->bindParam(':combos', $_POST['combos']);
+    $stmt->bindParam(':crash', $_POST['crash']);
 
     $stmt->execute();
 

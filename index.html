@@ -48,21 +48,32 @@
         </div>
 
         <div class="form-group">
+        <label for="risk">Risk: <output id="risko">5</output></label>
+        <input name="risk" id="risk" type="range" value="5" min="1" max="10" step="1"
+          oninput="risko.value = risk.value"/>
+        </div>
+
+        <div class="form-group">
         <label for="flow">Flow: <output id="flowo">5</output></label>
         <input name="flow" id="flow" type="range" value="5" min="1" max="10" step="1" 
           oninput="flowo.value = flow.value"/>
         </div>
 
         <div class="form-group">
-        <label for="tech">Technique: <output id="techo">5</output></label>
-        <input name="tech" id="tech" type="range" value="5" min="1" max="10" step="1"
-          oninput="techo.value = tech.value"/>
+        <label for="variation">Variation: <output id="variationo">5</output></label>
+        <input name="variation" id="variation" type="range" value="5" min="1" max="10" step="1"
+          oninput="variationo.value = variation.value"/>
         </div>
 
         <div class="form-group">
-        <label for="risk">Risk: <output id="risko">5</output></label>
-        <input name="risk" id="risk" type="range" value="5" min="1" max="10" step="1"
-          oninput="risko.value = risk.value"/>
+        <label for="combos">Combos: <output id="comboso">5</output></label>
+        <input name="combos" id="combos" type="range" value="5" min="1" max="10" step="1"
+          oninput="comboso.value = combos.value"/>
+        </div>
+
+        <div class="form-group">
+        <label for="crash">Krasch: </label>
+        <input name="crash" id="crash" type="checkbox" />
         </div>
 
         <!--

@@ -7,7 +7,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $stmt = $conn->prepare("select performance, (avg(flow)+avg(tech)+avg(risk))/3 as average
+    $stmt = $conn->prepare("select performance, (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4-5*crash as average
       from Votes where Votes.voter in (select name from Voters) group by performance order by average desc;");
     $stmt->execute();
     $result = $stmt->fetchAll();

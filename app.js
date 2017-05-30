@@ -52,30 +52,4 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-
-  /*
-  $('#votebutton').click(function(){
-    console.log("ost");
-    $.ajax({
-      url: post.php,
-      type:'POST',
-      data:
-      {
-          hiddenidentifier: "johannes",
-          performance: "Emil",
-	  flow: 10,
-	  tech: 10,
-	  risk: 10
-      },
-      success: function(msg)
-      {
-          alert('Thank you for your vote');
-      },
-      error: function(msg)
-      {
-	  alert('Failure');
-      }
-    });
-  });
-  */
 });
