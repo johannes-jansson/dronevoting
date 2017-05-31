@@ -13,113 +13,109 @@
   <body>
     <img src="assets/header.jpg" width="100%" />
 
-    <!--<div id="header" class="">-->
-      <div class="jumbotron">
-        <!--<img src="assets/banner.jpg" width="100%" />-->
-        <div class="container-fluid">
+    <div class="jumbotron">
+      <div class="container-fluid">
         <h1> Drone Freestyle Challenge </h1>
-        <!-- <p> Lorem ipsum </p> -->
-        </div>
       </div>
-    <!--</div>-->
+    </div>
 
     <div class="container-fluid">
 
-    <div id="login" class="well">
-      <div class="form-group">
-        <label for="identifier">Kod:</label>
-        <input type="text" id="identifier" name="identifier" class="form-control">
-        <button type="button" id="loginbutton" class="btn">SIGN IN</button>
+      <div id="login" class="well">
+        <div class="form-group">
+          <label for="identifier">Kod:</label>
+          <input type="text" id="identifier" name="identifier" class="form-control">
+          <button type="button" id="loginbutton" class="btn">SIGN IN</button>
+        </div>
       </div>
-    </div>
 
-    <div id="form" class="well hide">
-      <!--<form method="post" action="post.php">-->
-      <form>
-        <input type="hidden" name="hiddenidentifier" id="hiddenidentifier"></input>
-        <div class="form-group">
-        <label for="performance">Performance:</label>
-        <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
-        <select name="performance" class="form-control">
-          <option value="emil 1">emil 1</option>
-          <option value="emil 2">emil 2</option>
-          <option value="emil 3">emil 3</option>
-          <option value="janzon 1">janzon 1</option>
-          <option value="janzon 2">janzon 2</option>
-          <option value="janzon 3">janzon 3</option>
-        </select>
-        </div>
+      <div id="form" class="well hide">
+        <!--<form method="post" action="post.php">-->
+        <form>
+          <input type="hidden" name="hiddenidentifier" id="hiddenidentifier"></input>
+          <div class="form-group">
+          <label for="performance">Performance:</label>
+          <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
+          <select name="performance" class="form-control">
+            <option value="emil 1">emil 1</option>
+            <option value="emil 2">emil 2</option>
+            <option value="emil 3">emil 3</option>
+            <option value="janzon 1">janzon 1</option>
+            <option value="janzon 2">janzon 2</option>
+            <option value="janzon 3">janzon 3</option>
+          </select>
+          </div>
 
-        <div class="form-group">
-        <label for="risk">Risk: <output id="risko">5</output></label>
-        <input name="risk" id="risk" type="range" value="5" min="1" max="10" step="1"
-          oninput="risko.value = risk.value"/>
-        </div>
+          <div class="form-group">
+          <label for="risk">Risk: <output id="risko">5</output></label>
+          <input name="risk" id="risk" type="range" value="5" min="1" max="10" step="1"
+            oninput="risko.value = risk.value"/>
+          </div>
 
-        <div class="form-group">
-        <label for="flow">Flow: <output id="flowo">5</output></label>
-        <input name="flow" id="flow" type="range" value="5" min="1" max="10" step="1" 
-          oninput="flowo.value = flow.value"/>
-        </div>
+          <div class="form-group">
+          <label for="flow">Flow: <output id="flowo">5</output></label>
+          <input name="flow" id="flow" type="range" value="5" min="1" max="10" step="1" 
+            oninput="flowo.value = flow.value"/>
+          </div>
 
-        <div class="form-group">
-        <label for="variation">Variation: <output id="variationo">5</output></label>
-        <input name="variation" id="variation" type="range" value="5" min="1" max="10" step="1"
-          oninput="variationo.value = variation.value"/>
-        </div>
+          <div class="form-group">
+          <label for="variation">Variation: <output id="variationo">5</output></label>
+          <input name="variation" id="variation" type="range" value="5" min="1" max="10" step="1"
+            oninput="variationo.value = variation.value"/>
+          </div>
 
-        <div class="form-group">
-        <label for="combos">Combos: <output id="comboso">5</output></label>
-        <input name="combos" id="combos" type="range" value="5" min="1" max="10" step="1"
-          oninput="comboso.value = combos.value"/>
-        </div>
+          <div class="form-group">
+          <label for="combos">Combos: <output id="comboso">5</output></label>
+          <input name="combos" id="combos" type="range" value="5" min="1" max="10" step="1"
+            oninput="comboso.value = combos.value"/>
+          </div>
 
-        <div class="form-group">
-        <label for="crash">Krasch: </label>
-        <input name="crash" id="crash" type="hidden" value=0 />
-        <input name="crash" id="crash" type="checkbox" value=1 />
-        </div>
+          <div class="form-group">
+          <label for="crash">Krasch: </label>
+          <input name="crash" id="crash" type="hidden" value=0 />
+          <input name="crash" id="crash" type="checkbox" value=1 />
+          </div>
 
-        <!--
-        <label for="innovation">Innovation:</label>
-        <input id="innovation" type="range" min="1" max="10" step="1" />
+          <!--
+          <label for="innovation">Innovation:</label>
+          <input id="innovation" type="range" min="1" max="10" step="1" />
 
-        <br />
+          <br />
 
-        <label for="variation">Variation:</label>
-        <input id="variation" type="range" min="1" max="10" step="1" />
+          <label for="variation">Variation:</label>
+          <input id="variation" type="range" min="1" max="10" step="1" />
 
-        <br />
+          <br />
 
-        <label for="intensity">Intensity:</label>
-        <input id="intensity" type="range" min="1" max="10" step="1" />
+          <label for="intensity">Intensity:</label>
+          <input id="intensity" type="range" min="1" max="10" step="1" />
 
-        <br />
-        -->
+          <br />
+          -->
 
-        <div class="form-group">
-        <div class="button">
-          <button type="button" id="votebutton" class="btn btn-block">VOTE</button>
-          <!--<button id="votebutton" class="btn btn-block">VOTE</button>-->
-        </div>
-        </div>
-      </form>
-    </div>
+          <div class="form-group">
+          <div class="button">
+            <button type="button" id="votebutton" class="btn btn-block">VOTE</button>
+            <!--<button id="votebutton" class="btn btn-block">VOTE</button>-->
+          </div>
+          </div>
+        </form>
+      </div>
 
-    <div id="voted" class="well hide">
-      <h2> Thank you for your vote! </h2>
-      <button type="button" id="again" class="btn btn-block"> VOTE AGAIN </button>
-    </div>
+      <div id="voted" class="well hide">
+        <h2> Thank you for your vote! </h2>
+        <button type="button" id="again" class="btn btn-block"> VOTE AGAIN </button>
+      </div>
 
-    <div id="signout" class="well hide">
+      <div id="signout" class="well hide">
 
-      <button type="button" id="signoutbutton" class="btn btn-block"> SIGN OUT </button>
-    </div>
+        <button type="button" id="signoutbutton" class="btn btn-block"> SIGN OUT </button>
+      </div>
 
-    <!--<div id="footer" class="">Designed by Talkative in Malmö</div>
-    </div>-->
+      <!--<div id="footer" class="">Designed by Talkative in Malmö</div>
+      </div>-->
 
-    </div>
-  <img src="assets/footer.jpg" width="100%" />
+      </div>
+    <img src="assets/footer.jpg" width="100%" />
   </body>
 </html>
