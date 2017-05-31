@@ -41,12 +41,28 @@
           <label for="performance">Performance:</label>
           <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
           <select name="performance" class="form-control">
-            <option value="emil 1">emil 1</option>
-            <option value="emil 2">emil 2</option>
-            <option value="emil 3">emil 3</option>
-            <option value="janzon 1">janzon 1</option>
-            <option value="janzon 2">janzon 2</option>
-            <option value="janzon 3">janzon 3</option>
+            <?php
+                require_once("connect.inc.php");
+            
+            try {
+                $conn = new PDO("mysql:host=$host;dbname=$database", $userName, $password);
+                // set the PDO error mode to exception
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+                $stmt = $conn->prepare("select name from Performances;");
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+            
+                foreach( $result as $row ) {
+                  echo "<option value='".$row['name']."'>".$row['name']."</option>";
+                }
+            
+            } catch(PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
+            
+            $conn = null;
+            ?>
           </select>
           </div>
 

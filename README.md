@@ -9,11 +9,13 @@ A voting webapp for a freestyle drone competition
 [x] Move to server
 
 ## Todos "frontend"
-[ ] Read input values from server
+[x] Read input values from server
 [ ] Verify voting code?
 [x] Fix sliders on Mobile Safari
 [x] Last navigation stuff
-[ ] Style admin backend view
+[ ] Style admin backend view?
 [x] Style public backend view
 [x] Fix the pictures
 [x] Enter key
+[ ] Fix mobile design
+[ ] Fix desktop design
