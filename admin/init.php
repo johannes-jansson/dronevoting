@@ -47,7 +47,8 @@ try {
     $stmt->execute();
     echo "Voters table updated";
 
-    $stmt = $conn->prepare( 'INSERT INTO Performances (name) VALUES ("emil"), ("janzon")');
+    $stmt = $conn->prepare( 'INSERT INTO Performances (name) VALUES ("emil 1"), 
+      ("emil 2"), ("emil 3"), ("janzon 1"), ("janzon 2"), ("janzon 3")');
     $stmt->execute();
     echo "Voters table updated";
 
