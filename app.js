@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("loginbutton").onclick = function () {
+		// same as below!
     document.getElementById("hiddenidentifier").value = document.getElementById("identifier").value;
 
     document.getElementById("form").classList.remove('hide');
@@ -51,4 +52,16 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+
+	document.getElementById("identifier")
+	    .addEventListener("keydown", function(event) {
+	    if (event.keyCode == 13) {
+				// same as above!
+    		document.getElementById("hiddenidentifier").value = document.getElementById("identifier").value;
+
+    		document.getElementById("form").classList.remove('hide');
+    		document.getElementById("login").classList.add('hide');
+    		document.getElementById("signout").classList.remove('hide');
+	    }
+	});
 });
