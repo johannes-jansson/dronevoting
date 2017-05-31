@@ -12,7 +12,8 @@ A voting webapp for a freestyle drone competition
 [ ] Read input values from server
 [ ] Verify voting code?
 [x] Fix sliders on Mobile Safari
-[ ] Last navigation stuff
+[x] Last navigation stuff
 [ ] Style admin backend view
-[ ] Style public backend view
+[x] Style public backend view
 [x] Fix the pictures
+[x] Enter key
