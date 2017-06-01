@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <img src="assets/header.jpg" width="100%" />
+    <img src="assets/header.jpg" width="100%" class="grid-width" />
 
-    <div class="jumbotron">
+    <div class="jumbotron grid-width">
       <div class="container-fluid">
         <h1> Drone Freestyle Challenge </h1>
       </div>
@@ -25,28 +25,28 @@
           <thead><tr><td>Framträdande:</td><td>Poäng:</td></tr></thead>
           <?php
               require_once("connect.inc.php");
-          
+
           try {
               $conn = new PDO("mysql:host=$host;dbname=$database", $userName, $password);
               // set the PDO error mode to exception
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          
+
               $stmt = $conn->prepare("select performance, (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4-5*crash as average
                 from Votes where Votes.voter in (select name from Voters) group by performance order by average desc;");
               $stmt->execute();
               $result = $stmt->fetchAll();
-          
+
               foreach( $result as $row ) {
                 echo "<tr>";
                 echo "<td>".$row['performance']."</td>";
                 echo "<td>".$row['average']."</td>";
                 echo "</tr>";
               }
-          
+
           } catch(PDOException $e) {
               echo $sql . "<br>" . $e->getMessage();
           }
-          
+
           $conn = null;
           ?>
         </table>
@@ -54,10 +54,10 @@
       </div>
 
       <div id="leaderboard" class="well">
-        <button type="button" onclick="location.href='index.html';" id="leaderboardbutton" class="btn btn-block"> GO TO VOTING </button>
+        <button type="button" onclick="location.href='index.php';" id="leaderboardbutton" class="btn btn-block"> GO TO VOTING </button>
       </div>
 
       </div>
-    <img src="assets/footer.jpg" width="100%" />
+    <img src="assets/footer.jpg" width="100%" class="grid-width" />
   </body>
 </html>

@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <img src="assets/header.jpg" width="100%" />
+    <img src="assets/header.jpg" width="100%" class="grid-width"/>
 
-    <div class="jumbotron">
+    <div class="jumbotron grid-width">
       <div class="container-fluid">
         <h1> Drone Freestyle Challenge </h1>
       </div>
@@ -43,24 +43,24 @@
           <select name="performance" class="form-control">
             <?php
                 require_once("connect.inc.php");
-            
+
             try {
                 $conn = new PDO("mysql:host=$host;dbname=$database", $userName, $password);
                 // set the PDO error mode to exception
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
+
                 $stmt = $conn->prepare("select name from Performances;");
                 $stmt->execute();
                 $result = $stmt->fetchAll();
-            
+
                 foreach( $result as $row ) {
                   echo "<option value='".$row['name']."'>".$row['name']."</option>";
                 }
-            
+
             } catch(PDOException $e) {
                 echo $sql . "<br>" . $e->getMessage();
             }
-            
+
             $conn = null;
             ?>
           </select>
@@ -74,7 +74,7 @@
 
           <div class="form-group">
           <label for="flow">Flow: <output id="flowo">5</output></label>
-          <input name="flow" id="flow" type="range" value="5" min="1" max="10" step="1" 
+          <input name="flow" id="flow" type="range" value="5" min="1" max="10" step="1"
             oninput="flowo.value = flow.value"/>
           </div>
 
@@ -136,6 +136,6 @@
       </div>
 
       </div>
-    <img src="assets/footer.jpg" width="100%" />
+    <img src="assets/footer.jpg" width="100%" class="grid-width" />
   </body>
 </html>
