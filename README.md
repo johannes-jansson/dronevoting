@@ -18,4 +18,5 @@ A voting webapp for a freestyle drone competition
 [x] Fix the pictures
 [x] Enter key
 [ ] Fix mobile design
-[ ] Fix desktop design
+[x] Fix desktop design
+[ ] Checkbox https://codepen.io/artyom-ivanov/pen/ggQaLV
