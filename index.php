@@ -6,6 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -38,7 +40,7 @@
         <form>
           <input type="hidden" name="hiddenidentifier" id="hiddenidentifier"></input>
           <div class="form-group">
-          <label for="performance">Performance:</label>
+          <label for="performance">Uppträdande:</label>
           <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
           <select name="performance" class="form-control">
             <?php
@@ -93,7 +95,8 @@
           <div class="form-group">
           <label for="crash">Krasch: </label>
           <input name="crash" id="crash" type="hidden" value=0 />
-          <input name="crash" id="crash" type="checkbox" value=1 />
+          <input name="crash" id="crash" data-toggle="toggle" type="checkbox" value=1
+            data-on="Krash" data-onstyle="warning" data-off="Inte krash" data-offstyle="success" data-width="100%"/>
           </div>
 
           <!--
