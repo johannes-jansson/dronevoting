@@ -31,13 +31,12 @@
               // set the PDO error mode to exception
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
-              $stmt = $conn->prepare(" select performance, 
-case when sum(crash)/count(performance) > 0.75
+              $stmt = $conn->prepare("select Votes.performance, 
+case when sum(crash)/count(Votes.performance) > 0.75
 then (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4 - 2
 else (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4
-end as average
-from Votes where Votes.voter in (select name from Voters) group by performance order by average desc;
-");
+end as average, Performances.performer
+from Votes left join Performances on (Votes.performance = Performances.name) where Votes.voter in (select name from Voters) group by Votes.performance order by average desc;");
               $stmt->execute();
               $result = $stmt->fetchAll();
           
