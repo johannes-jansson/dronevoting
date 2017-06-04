@@ -22,7 +22,7 @@
 
       <div id="results" class="well">
         <table class='table'>
-          <thead><tr><td>Pilot:</td><td>Bästa poäng:</td></tr></thead>
+          <thead><tr><td>Pilot:</td><td>Bästa poäng:</td><td>Framträdande nr: </td></tr></thead>
           <?php
               require_once("connect.inc.php");
           
@@ -32,7 +32,7 @@
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
               $stmt = $conn->prepare("
-select a.performer, max(a.average) as best
+select a.performer, a.performance, max(a.average) as best
 from Votes b inner join (
 select Votes.performance, Votes.voter,
 case when sum(crash)/count(Votes.performance) > 0.75
@@ -51,6 +51,7 @@ order by best desc
                 echo "<tr>";
                 echo "<td>".$row['performer']."</td>";
                 echo "<td>".$row['best']."</td>";
+                echo "<td>".$row['performance']."</td>";
                 echo "</tr>";
               }
           
