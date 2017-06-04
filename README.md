@@ -14,7 +14,7 @@ A voting webapp for a freestyle drone competition
 [x] Style public backend view
 [x] Fix the pictures
 [x] Enter key
-[ ] Better looking checkboxes
+[x] Better looking checkboxes
 [ ] Fix mobile design
 [x] Fix desktop design
 [ ] Use self-hosted jquery etc
