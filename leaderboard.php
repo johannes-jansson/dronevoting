@@ -31,19 +31,25 @@
               // set the PDO error mode to exception
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
-              $stmt = $conn->prepare("select Votes.performance, 
+              $stmt = $conn->prepare("
+select a.performer, max(a.average) as best
+from Votes b inner join (
+select Votes.performance, Votes.voter,
 case when sum(crash)/count(Votes.performance) > 0.75
 then (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4 - 2
 else (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4
 end as average, Performances.performer
-from Votes left join Performances on (Votes.performance = Performances.name) where Votes.voter in (select name from Voters) group by Votes.performance order by average desc;");
+from Votes left join Performances on (Votes.performance = Performances.name) where Votes.voter in (select name from Voters) group by Votes.performance order by average desc) a 
+on a.performance = b.performance and a.voter = b.voter
+group by a.performer
+");
               $stmt->execute();
               $result = $stmt->fetchAll();
           
               foreach( $result as $row ) {
                 echo "<tr>";
-                echo "<td>".$row['performance']."</td>";
-                echo "<td>".$row['average']."</td>";
+                echo "<td>".$row['performer']."</td>";
+                echo "<td>".$row['best']."</td>";
                 echo "</tr>";
               }
           
