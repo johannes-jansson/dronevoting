@@ -22,7 +22,7 @@
 
       <div id="results" class="well">
         <table class='table'>
-          <thead><tr><td>Framträdande:</td><td>Poäng:</td></tr></thead>
+          <thead><tr><td>Pilot:</td><td>Poäng:</td></tr></thead>
           <?php
               require_once("connect.inc.php");
           
