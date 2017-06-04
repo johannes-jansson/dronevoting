@@ -8,7 +8,7 @@ try {
 
 
     
-    $stmt = $conn->prepare("select voter, performance, risk, flow, variation, combos, crash, tstamp, (risk + flow + variation + combos)/4-5*crash as average from Votes;");
+    $stmt = $conn->prepare("select voter, performance, risk, flow, variation, combos, crash, tstamp, (risk + flow + variation + combos)/4 as average from Votes;");
     $stmt->execute();
     $result = $stmt->fetchAll();
 
