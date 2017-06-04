@@ -22,7 +22,7 @@
 
       <div id="results" class="well">
         <table class='table'>
-          <thead><tr><td>Pilot:</td><td>Poäng:</td></tr></thead>
+          <thead><tr><td>Pilot:</td><td>Bästa poäng:</td></tr></thead>
           <?php
               require_once("connect.inc.php");
           
@@ -42,6 +42,7 @@ end as average, Performances.performer
 from Votes left join Performances on (Votes.performance = Performances.name) where Votes.voter in (select name from Voters) group by Votes.performance order by average desc) a 
 on a.performance = b.performance and a.voter = b.voter
 group by a.performer
+order by best desc
 ");
               $stmt->execute();
               $result = $stmt->fetchAll();
@@ -64,7 +65,7 @@ group by a.performer
       </div>
 
       <div id="leaderboard" class="well">
-        <button type="button" onclick="location.href='index.html';" id="leaderboardbutton" class="btn btn-block"> GO TO VOTING </button>
+        <button type="button" onclick="location.href='index.php';" id="leaderboardbutton" class="btn btn-block"> RÖSTNING </button>
       </div>
 
       </div>

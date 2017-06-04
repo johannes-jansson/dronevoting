@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-          <button type="button" id="loginbutton" class="btn btn-block">SIGN IN</button>
+          <button type="button" id="loginbutton" class="btn btn-block">LOGGA IN</button>
         </div>
       </div>
 
@@ -117,7 +117,7 @@
 
           <div class="form-group">
           	<div class="button">
-          	  <button type="button" id="votebutton" class="btn btn-block">VOTE</button>
+          	  <button type="button" id="votebutton" class="btn btn-block">RÖSTA</button>
           	</div>
           </div>
 
@@ -125,16 +125,14 @@
       </div>
 
       <div id="voted" class="well hide">
-        <h2> Thank you for your vote! </h2>
-        <button type="button" id="again" class="btn btn-block"> VOTE AGAIN </button>
+        <h2> Tack för din röst! </h2>
+        <button type="button" id="again" class="btn btn-block"> RÖSTA IGEN </button>
       </div>
 
-      <div id="signout" class="well hide">
-        <button type="button" id="signoutbutton" class="btn btn-block"> SIGN OUT </button>
-      </div>
 
       <div id="leaderboard" class="well">
-        <button type="button" onclick="location.href='leaderboard.php';" id="leaderboardbutton" class="btn btn-block"> GO TO LEADERBOARD </button>
+        <button type="button" id="signoutbutton" class="btn btn-block hide"> LOGGA UT </button>
+        <button type="button" onclick="location.href='leaderboard.php';" id="leaderboardbutton" class="btn btn-block"> LEADERBOARD </button>
       </div>
 
       </div>
