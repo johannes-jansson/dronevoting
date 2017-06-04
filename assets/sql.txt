@@ -1,0 +1,29 @@
+// do average
+select performance, (avg(flow)+avg(tech)+avg(risk))/3 
+from Votes 
+group by performance;
+
+
+// exclude non valid voters
+select performance, (avg(flow)+avg(tech)+avg(risk))/3 as average
+from Votes 
+where Votes.voter in (select name from Voters) 
+group by performance;
+
+
+
+// insert like this to make stuff work
+// voter and performance has to be primary key
+INSERT INTO  `fpvwiki_se_dronevoting`.`Votes2` (
+`voter` ,
+`performance` ,
+`flow` ,
+`tech` ,
+`risk` ,
+`tstamp`
+)
+VALUES (
+'mossa',  'emil',  '1',  '1',  '1', 
+CURRENT_TIMESTAMP
+)
+ON DUPLICATE KEY UPDATE flow=1, tech=1, risk=1
