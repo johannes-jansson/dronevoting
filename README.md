@@ -16,7 +16,7 @@ A voting webapp for a freestyle drone competition
 [x] Enter key
 [x] Better looking checkboxes
 [x] Fix mobile design
-[ ] Fix desktop design (already made at job?)
+[x] Fix desktop design (already made at work)
 [x] Use self-hosted jquery etc
 [x] Move sign out button
 [ ] See which performance was best
