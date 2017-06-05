@@ -22,7 +22,7 @@
 
       <div id="results" class="well">
         <table class='table'>
-          <thead><tr><td>Framträdande:</td><td>Poäng:</td></tr></thead>
+          <thead><tr><td>Pilot:</td><td>Bästa poäng:</td><td>Framträdande nr: </td></tr></thead>
           <?php
               require_once("connect.inc.php");
 
@@ -31,15 +31,30 @@
               // set the PDO error mode to exception
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-              $stmt = $conn->prepare("select performance, (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4-5*crash as average
-                from Votes where Votes.voter in (select name from Voters) group by performance order by average desc;");
+              // $stmt = $conn->prepare("select performance, (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4-5*crash as average
+              //   from Votes where Votes.voter in (select name from Voters) group by performance order by average desc;");
+          
+              $stmt = $conn->prepare("
+select a.performer, a.performance, max(a.average) as best
+from Votes b inner join (
+select Votes.performance, Votes.voter,
+case when sum(crash)/count(Votes.performance) > 0.75
+then (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4 - 2
+else (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4
+end as average, Performances.performer
+from Votes left join Performances on (Votes.performance = Performances.name) where Votes.voter in (select name from Voters) group by Votes.performance order by average desc) a 
+on a.performance = b.performance and a.voter = b.voter
+group by a.performer
+order by best desc
+");
               $stmt->execute();
               $result = $stmt->fetchAll();
 
               foreach( $result as $row ) {
                 echo "<tr>";
+                echo "<td>".$row['performer']."</td>";
+                echo "<td>".$row['best']."</td>";
                 echo "<td>".$row['performance']."</td>";
-                echo "<td>".$row['average']."</td>";
                 echo "</tr>";
               }
 
@@ -54,7 +69,7 @@
       </div>
 
       <div id="leaderboard" class="well">
-        <button type="button" onclick="location.href='index.php';" id="leaderboardbutton" class="btn btn-block"> GO TO VOTING </button>
+        <button type="button" onclick="location.href='index.php';" id="leaderboardbutton" class="btn btn-block"> RÖSTNING </button>
       </div>
 
       </div>

@@ -2,10 +2,11 @@
   <head>
     <title> Drone Freestyle Challenge </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <script src="lib/bootstrap.min.js"></script>
+    <link href="lib/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="lib/bootstrap-toggle.min.js"></script>
 
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -28,7 +29,7 @@
         </div>
 
         <div class="form-group">
-          <button type="button" id="loginbutton" class="btn btn-block">SIGN IN</button>
+          <button type="button" id="loginbutton" class="btn btn-block">LOGGA IN</button>
         </div>
       </div>
 
@@ -38,7 +39,7 @@
         <form>
           <input type="hidden" name="hiddenidentifier" id="hiddenidentifier"></input>
           <div class="form-group">
-          <label for="performance">Performance:</label>
+          <label for="performance">Uppträdande:</label>
           <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
           <select name="performance" class="form-control">
             <?php
@@ -93,7 +94,8 @@
           <div class="form-group">
           <label for="crash">Krasch: </label>
           <input name="crash" id="crash" type="hidden" value=0 />
-          <input name="crash" id="crash" type="checkbox" value=1 />
+          <input name="crash" id="crash" data-toggle="toggle" type="checkbox" value=1
+            data-on="Krash" data-onstyle="warning" data-off="Inte krash" data-offstyle="success" data-width="100%"/>
           </div>
 
           <!--
@@ -115,7 +117,7 @@
 
           <div class="form-group">
           	<div class="button">
-          	  <button type="button" id="votebutton" class="btn btn-block">VOTE</button>
+          	  <button type="button" id="votebutton" class="btn btn-block">RÖSTA</button>
           	</div>
           </div>
 
@@ -123,16 +125,14 @@
       </div>
 
       <div id="voted" class="well hide">
-        <h2> Thank you for your vote! </h2>
-        <button type="button" id="again" class="btn btn-block"> VOTE AGAIN </button>
+        <h2> Tack för din röst! </h2>
+        <button type="button" id="again" class="btn btn-block"> RÖSTA IGEN </button>
       </div>
 
-      <div id="signout" class="well hide">
-        <button type="button" id="signoutbutton" class="btn btn-block"> SIGN OUT </button>
-      </div>
 
       <div id="leaderboard" class="well">
-        <button type="button" onclick="location.href='leaderboard.php';" id="leaderboardbutton" class="btn btn-block"> GO TO LEADERBOARD </button>
+        <button type="button" id="signoutbutton" class="btn btn-block hide"> LOGGA UT </button>
+        <button type="button" onclick="location.href='leaderboard.php';" id="leaderboardbutton" class="btn btn-block"> LEADERBOARD </button>
       </div>
 
       </div>
