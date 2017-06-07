@@ -22,7 +22,7 @@
 
       <div id="results" class="well">
         <table class='table'>
-          <tr><th>Pilot:</th><th align="right">Bästa poäng:</th><th align="right">Framträdande nr: </th></tr>
+          <tr><th>Placering:</th><th>Pilot:</th><th>Bästa poäng:</th></tr>
           <?php
               require_once("connect.inc.php");
 
@@ -45,17 +45,61 @@ end as average, Performances.performer
 from Votes left join Performances on (Votes.performance = Performances.name) where Votes.voter in (select name from Voters) group by Votes.performance order by average desc) a 
 on a.performance = b.performance and a.voter = b.voter
 group by a.performer
-order by best desc
+order by best desc limit 5
 ");
               $stmt->execute();
               $result = $stmt->fetchAll();
 
+              $i=1;
               foreach( $result as $row ) {
                 echo "<tr>";
+                echo "<td>".$i."</td>";
                 echo "<td>".$row['performer']."</td>";
-                echo "<td align='right'>".round($row['best'],2)."</td>";
-                echo "<td align='right'>".$row['performance']."</td>";
+                echo "<td>".round($row['best'],2)."</td>";
                 echo "</tr>";
+                $i=$i+1;
+              }
+
+          } catch(PDOException $e) {
+              echo $sql . "<br>" . $e->getMessage();
+          }
+
+          $conn = null;
+          ?>
+        </table>
+        <table class='table'>
+          <tr><th>Placering:</th><th>Framträdande:</th><th>Poäng:</th></tr>
+          <?php
+              require_once("connect.inc.php");
+
+          try {
+              $conn = new PDO("mysql:host=$host;dbname=$database", $userName, $password);
+              // set the PDO error mode to exception
+              $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+              // $stmt = $conn->prepare("select performance, (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4-5*crash as average
+              //   from Votes where Votes.voter in (select name from Voters) group by performance order by average desc;");
+          
+              $stmt = $conn->prepare("
+select Votes.performance, Votes.voter,
+case when sum(crash)/count(Votes.performance) > 0.75
+then (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4 - 2
+else (avg(risk)+avg(flow)+avg(variation)+avg(combos))/4
+end as average, Performances.performer
+from Votes left join Performances on (Votes.performance = Performances.name)
+where Votes.voter in (select name from Voters) group by Votes.performance order by average desc;
+");
+              $stmt->execute();
+              $result = $stmt->fetchAll();
+
+              $i = 1;
+              foreach( $result as $row ) {
+                echo "<tr>";
+                echo "<td>".$i."</td>";
+                echo "<td>".$row['performance']."</td>";
+                echo "<td>".round($row['average'],2)."</td>";
+                echo "</tr>";
+                $i = $i+1;
               }
 
           } catch(PDOException $e) {
