@@ -20,6 +20,8 @@ A voting webapp for a freestyle drone competition
 - [x] Use self-hosted jquery etc
 - [x] Move sign out button
 - [ ] See which performance was best
-- [ ] Table width on mobile
+- [x] Table width on mobile
 - [ ] Check on android
 - [x] Security
+- [x] Button background color phone
+- [ ] iPhone zoom issue

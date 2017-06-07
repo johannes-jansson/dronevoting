@@ -63,3 +63,10 @@ input[type="range"]::-webkit-slider-thumb{
   /*display: block;
   margin: 0 auto;*/
 }
+
+.btn-block {
+  background-color: rgb(216,216,216) !important;
+}
+
+/* Fix for iPhone zooming in on input fields */
+select, select:focus, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] { font-size: 16px; }

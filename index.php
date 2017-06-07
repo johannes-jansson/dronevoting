@@ -41,7 +41,7 @@
           <div class="form-group">
           <label for="performance">Uppträdande:</label>
           <!-- should be done like this: https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
-          <select name="performance" class="form-control">
+          <select name="performance" id="selectperformance" class="form-control">
             <?php
                 require_once("connect.inc.php");
 
