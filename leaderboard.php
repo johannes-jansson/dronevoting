@@ -22,7 +22,7 @@
 
       <div id="results" class="well">
         <table class='table'>
-          <thead><tr><td>Pilot:</td><td>Bästa poäng:</td><td>Framträdande nr: </td></tr></thead>
+          <tr><th>Pilot:</th><th align="right">Bästa poäng:</th><th align="right">Framträdande nr: </th></tr>
           <?php
               require_once("connect.inc.php");
 
@@ -53,8 +53,8 @@ order by best desc
               foreach( $result as $row ) {
                 echo "<tr>";
                 echo "<td>".$row['performer']."</td>";
-                echo "<td>".$row['best']."</td>";
-                echo "<td>".$row['performance']."</td>";
+                echo "<td align='right'>".round($row['best'],2)."</td>";
+                echo "<td align='right'>".$row['performance']."</td>";
                 echo "</tr>";
               }
 

@@ -1,0 +1,6 @@
+<FilesMatch "(connect.inc.php)">
+AuthName "Member Only"
+AuthType Basic
+AuthUserFile /home/fpvvwiki.se/.htpasswd
+require valid-user
+</FilesMatch>

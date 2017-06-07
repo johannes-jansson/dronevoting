@@ -57,3 +57,9 @@ input[type="range"]::-webkit-slider-thumb{
   padding-bottom: 30px;
   margin-bottom: 30px;
 }
+
+.table {
+  max-width: 100%;
+  /*display: block;
+  margin: 0 auto;*/
+}

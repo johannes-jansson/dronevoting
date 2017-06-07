@@ -1,5 +1,5 @@
 <?php
-    require_once("../connect.inc.php");
+    require_once("connect.inc.php");
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$database", $userName, $password);
@@ -18,7 +18,7 @@ try {
     $stmt->execute();
     echo "Cleared Voters table";
 
-    $stmt = $conn->prepare( 'INSERT INTO Voters (name) VALUES 
+    $stmt = $conn->prepare( 'INSERT INTO Voters (name) VALUES
       ("perfume"), ("circle"), ("intention"), ("staff"), ("fruit"), ("tone"),
       ("image"), ("declaration"), ("fiction"), ("glacier"), ("back"), ("constitution"),
       ("essay"), ("grandmother"), ("plead"), ("costume"), ("limit"), ("therapist"),
@@ -47,7 +47,7 @@ try {
     $stmt->execute();
     echo "Voters table updated";
 
-    $stmt = $conn->prepare( 'INSERT INTO Performances (name, performer) VALUES ("emil 1","emil"), 
+    $stmt = $conn->prepare( 'INSERT INTO Performances (name, performer) VALUES ("emil 1","emil"),
       ("emil 2","emil"), ("emil 3","emil"), ("janzon 1","janzon"), ("janzon 2","janzon"), ("janzon 3","janzon")');
     $stmt->execute();
     echo "Voters table updated";

@@ -1,5 +1,5 @@
 <?php
-    require_once("../connect.inc.php");
+    require_once("connect.inc.php");
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$database", $userName, $password);
@@ -7,7 +7,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    
+
     $stmt = $conn->prepare("select voter, performance, risk, flow, variation, combos, crash, tstamp, (risk + flow + variation + combos)/4 as average from Votes;");
     $stmt->execute();
     $result = $stmt->fetchAll();
