@@ -66,8 +66,7 @@ order by best desc limit 5
 
           $conn = null;
           ?>
-        </table>
-        <table class='table'>
+          <tr><td></td><td></td><td></td></tr>
           <tr><th>Placering:</th><th>Framträdande:</th><th>Poäng:</th></tr>
           <?php
               require_once("connect.inc.php");
