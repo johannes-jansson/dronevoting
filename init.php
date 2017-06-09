@@ -47,8 +47,28 @@ try {
     $stmt->execute();
     echo "Voters table updated";
 
-    $stmt = $conn->prepare( 'INSERT INTO Performances (name, performer) VALUES ("emil 1","emil"),
-      ("emil 2","emil"), ("emil 3","emil"), ("janzon 1","janzon"), ("janzon 2","janzon"), ("janzon 3","janzon")');
+    $stmt = $conn->prepare( 'INSERT INTO Performances (name, performer) VALUES 
+      ("Kim Thorup 1","Kim Thorup"), ("Kim Thorup 2","Kim Thorup"), ("Kim Thorup 3","Kim Thorup"),
+      ("Jacob Lantz 1","Jacob Lantz"), ("Jacob Lantz 2","Jacob Lantz"), ("Jacob Lantz 3","Jacob Lantz"),
+      ("Patrick Ryan 1","Patrick Ryan"), ("Patrick Ryan 2","Patrick Ryan"), ("Patrick Ryan 3","Patrick Ryan"),
+      ("Alexander Blacker 1","Alexander Blacker"), ("Alexander Blacker 2","Alexander Blacker"), ("Alexander Blacker 3","Alexander Blacker"),
+      ("Olivia Nilsson 1","Olivia Nilsson"), ("Olivia Nilsson 2","Olivia Nilsson"), ("Olivia Nilsson 3","Olivia Nilsson"),
+      ("Erik Lydig 1","Erik Lydig"), ("Erik Lydig 2","Erik Lydig"), ("Erik Lydig 3","Erik Lydig"),
+      ("Elliot Nilsson 1","Elliot Nilsson"), ("Elliot Nilsson 2","Elliot Nilsson"), ("Elliot Nilsson 3","Elliot Nilsson"),
+      ("Pether Gustafsson 1","Pether Gustafsson"), ("Pether Gustafsson 2","Pether Gustafsson"), ("Pether Gustafsson 3","Pether Gustafsson"),
+      ("Martin Nilsson 1","Martin Nilsson"), ("Martin Nilsson 2","Martin Nilsson"), ("Martin Nilsson 3","Martin Nilsson"),
+      ("Emil Augustsson 1","Emil Augustsson"), ("Emil Augustsson 2","Emil Augustsson"), ("Emil Augustsson 3","Emil Augustsson"),
+      ("Basem Sallenman 1","Basem Sallenman"), ("Basem Sallenman 2","Basem Sallenman"), ("Basem Sallenman 3","Basem Sallenman"),
+      ("Mathias Abade 1","Mathias Abade"), ("Mathias Abade 2","Mathias Abade"), ("Mathias Abade 3","Mathias Abade"),
+      ("Jonas Pedersen 1","Jonas Pedersen"), ("Jonas Pedersen 2","Jonas Pedersen"), ("Jonas Pedersen 3","Jonas Pedersen"),
+      ("Andreas Holm 1","Andreas Holm"), ("Andreas Holm 2","Andreas Holm"), ("Andreas Holm 3","Andreas Holm"),
+
+      ("Charpu 1","Charpu"), ("Charpu 2","Charpu"), ("Charpu 3","Charpu"),
+      ("Johhny FPV 1","Johhny FPV"), ("Johhny FPV 2","Johhny FPV"), ("Johhny FPV 3","Johhny FPV"),
+      ("Mattystuntz 1","Mattystuntz"), ("Mattystuntz 2","Mattystuntz"), ("Mattystuntz 3","Mattystuntz"),
+      ("MrSteele 1","MrSteele"), ("MrSteele 2","MrSteele"), ("MrSteele 3","MrSteele"),
+      ("Ummagawd 1","Ummagawd"), ("Ummagawd 2","Ummagawd"), ("Ummagawd 3","Ummagawd")
+    ');
     $stmt->execute();
     echo "Voters table updated";
 
