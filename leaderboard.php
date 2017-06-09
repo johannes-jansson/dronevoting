@@ -22,7 +22,7 @@
 
       <div id="results" class="well">
         <table class='table'>
-          <tr><th>Placering:</th><th>Pilot:</th><th>Bästa poäng:</th></tr>
+          <tr><th>#</th><th>Pilot:</th><th>Bästa poäng:</th></tr>
           <?php
               require_once("connect.inc.php");
 
@@ -67,7 +67,7 @@ order by best desc limit 5
           $conn = null;
           ?>
           <tr><td></td><td></td><td></td></tr>
-          <tr><th>Placering:</th><th>Framträdande:</th><th>Poäng:</th></tr>
+          <tr><th>#</th><th>Framträdande:</th><th>Poäng:</th></tr>
           <?php
               require_once("connect.inc.php");
 
