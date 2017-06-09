@@ -22,7 +22,7 @@
 
       <div id="results" class="well">
         <table class='table'>
-          <tr><th>#</th><th>Pilot:</th><th>Bästa poäng:</th></tr>
+          <tr><th>#</th><th>Topp rank:</th><th>Bästa poäng:</th></tr>
           <?php
               require_once("connect.inc.php");
 
