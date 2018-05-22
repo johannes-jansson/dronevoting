@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <img src="assets/header.jpg" width="100%" class="grid-width"/>
+    <img src="assets/banner.png" width="100%" class="grid-width"/>
 
     <div class="jumbotron grid-width">
       <div class="container-fluid">
@@ -54,7 +54,7 @@
                 $stmt->execute();
                 $result = $stmt->fetchAll();
 
-		echo "<option disabled selected value> -- Uppträdande -- </option>";
+                echo "<option disabled selected value> -- Uppträdande -- </option>";
                 foreach( $result as $row ) {
                   echo "<option value='".$row['name']."'>".$row['name']."</option>";
                 }
@@ -137,6 +137,6 @@
       </div>
 
       </div>
-    <img src="assets/footer.jpg" width="100%" class="grid-width" />
+    <!--<img src="assets/footer.jpg" width="100%" class="grid-width" />-->
   </body>
 </html>
