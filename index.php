@@ -54,6 +54,7 @@
                 $stmt->execute();
                 $result = $stmt->fetchAll();
 
+		echo "<option disabled selected value> -- Uppträdande -- </option>";
                 foreach( $result as $row ) {
                   echo "<option value='".$row['name']."'>".$row['name']."</option>";
                 }
